@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입 페이지</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@100..900&display=swap");
+      body {
+        font-family: "Noto Sans KR", serif;
+        margin: 20px;
+      }
+      .name-list {
+        margin-top: 20px;
+      }
+      #name {
+        width: 230px;
+        height: 15px;
+        font-size: 16px;
+      }
+      .alert {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        border: 1px solid #ccc;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+      }
+      .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 999;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>회원가입</h1>
+    <label for="name">아스키 코드:</label>
+    <input
+      type="text"
+      id="name"
+      placeholder="아스키 코드로 이름을 입력하세요"
+    />
+    <button id="submit">입력</button>
+
+    <div class="name-list" id="nameList"></div>
+
+    <div class="overlay" id="overlay"></div>
+    <div class="alert" id="Alert">
+      <p id="alertMessage"></p>
+      <p id="count"></p>
+      <button id="alertButton" disabled>확인</button>
+    </div>
+
+    <script>
+      const nameList = [];
+
+      document.getElementById("submit").addEventListener("click", function () {
+        const codeInput = document.getElementById("name").value;
+
+        const code = parseInt(codeInput, 10);
+        if (isNaN(code) || code < 44032 || code > 55203) {
+          showAlert("아스키 코드로 이름을 입력하십시오.", null);
+          return;
+        }
+
+        const char = String.fromCharCode(code);
+        showAlert("정확하게 입력한 것이 맞습니까?", function () {
+          showAlert("정말 정확하게 입력하였습니까?", function () {
+            showAlert(`${char}이/가 정말 맞습니까?`, function () {
+              const char = String.fromCharCode(code);
+              nameList.push(char);
+              document.getElementById("nameList").innerText = nameList.join("");
+              document.getElementById("name").value = "";
+            });
+          });
+        });
+      });
+
+      function showAlert(message, callback) {
+        document.getElementById("alertMessage").innerText = message;
+        document.getElementById("overlay").style.display = "block";
+        document.getElementById("Alert").style.display = "block";
+
+        let count = 3;
+        document.getElementById("count").innerText = count;
+        document.getElementById("alertButton").disabled = true;
+
+        const countInterval = setInterval(() => {
+          count--;
+          document.getElementById("count").innerText = count;
+          if (count <= 0) {
+            clearInterval(countInterval);
+            document.getElementById("alertButton").disabled = false;
+            document.getElementById("alertButton").innerText = "확인";
+          }
+        }, 1000);
+
+        document.getElementById("alertButton").onclick = function () {
+          document.getElementById("overlay").style.display = "none";
+          document.getElementById("Alert").style.display = "none";
+          if (callback) callback();
+          document.getElementById("alertButton").innerText = "확인";
+        };
+      }
+    </script>
+  </body>
+</html>
