@@ -14,6 +14,7 @@
   <link href="Bootstrap\bootstrap.min.css" rel="stylesheet">
   <link href="CSS/Common.css" rel="stylesheet">
   <link href="CSS/Name.css" rel="stylesheet">
+  <link href="CSS/Phone.css" rel="stylesheet">
 </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -92,15 +93,14 @@
       <input type="text" id="name" placeholder="아스키 코드로 이름을 한글자씩 입력하세요" /> &nbsp;&nbsp;
       <button id="verify"> ASCII 입력 검증 </button>
 
-      <br><br>
-
+      <br>
       <div class="mb-3">
-        <label for="nameList"> &nbsp;입력한 이름 확인 :  </label>
+        <label for="nameList" class="marg"> &nbsp;입력한 이름 확인 :  </label>
         <span class="name-list" id="nameList"></span>
       </div>
     
 
-      <br>
+      
       <div class="overlay" id="overlay"></div>
       <div class="alert" id="Alert">
         <p id="alertMessage"></p>
@@ -108,6 +108,21 @@
         <button id="alertButton" disabled>확인</button>
       </div>
 
+      <div id="phoneDisplay" style="user-select: none;">
+        <label for="display1"> &nbsp;전화번호 입력 &nbsp;&nbsp; </label>
+        <span id="display1" onclick="increment('display1', 999)" class="sty1">000</span> -
+        <span id="display2" onclick="increment('display2', 9999)" class="sty1">0000</span> -
+        <span id="display3" onclick="increment('display3', 9999)" class="sty1">0000</span>
+        &nbsp;&nbsp;
+        <button onclick="saveNumber()">저장</button>
+      </div>
+
+      <div id="savedNumber" class="marg">
+        <label>&nbsp;입력한 전화번호 확인 : </label>
+        <span id="savedPhoneNumber"></span>
+      </div>
+
+      <br>
       <div class="mb-5">
         <a href="Check.html" class="btn btn-primary btn-lg px-4" id="signUpButton">Sign up</a>
       </div>
@@ -117,5 +132,6 @@
     </footer>
   </div>
   <script src="JS/Name.js"></script>
+  <script src="JS/Phone.js"></script>
   </body>
 </html>

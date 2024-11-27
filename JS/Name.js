@@ -24,7 +24,7 @@ showAlert("정확하게 입력한 것이 맞습니까?", function () {
         document.getElementById("name").value = "";
         
         localStorage.setItem("userName", nameList.join("")); // 로컬 스토리지에 이름 저장
-        signUpButton.disabled = false; 
+        signUpButton.disabled = false;
     });
     });
 });
