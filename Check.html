@@ -12,7 +12,7 @@
   <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/starter-template/">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
   <link href="Bootstrap\bootstrap.min.css" rel="stylesheet">
-  <link href="CSS/Common.css" rel="stylesheet">
+  <link href="CSS/Common.css" rel="stylesheet"> 
   <link href="CSS/Name.css" rel="stylesheet">
 </head>
   <body>
@@ -82,40 +82,22 @@
     <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
       <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
-        <span class="fs-4">신상 입력 페이지</span>
+        <span class="fs-4">신상 확인 페이지</span>
       </a>
     </header>
 
     <main>
       <!-- 이름 입력 구현 -->
-      <label for="name"> &nbsp;이름 입력 &nbsp;&nbsp; </label>
-      <input type="text" id="name" placeholder="아스키 코드로 이름을 한글자씩 입력하세요" /> &nbsp;&nbsp;
-      <button id="verify"> ASCII 입력 검증 </button>
-
-      <br><br>
 
       <div class="mb-3">
         <label for="nameList"> &nbsp;입력한 이름 확인 :  </label>
         <span class="name-list" id="nameList"></span>
-      </div>
-    
-
-      <br>
-      <div class="overlay" id="overlay"></div>
-      <div class="alert" id="Alert">
-        <p id="alertMessage"></p>
-        <p id="count"></p>
-        <button id="alertButton" disabled>확인</button>
-      </div>
-
-      <div class="mb-5">
-        <a href="Check.html" class="btn btn-primary btn-lg px-4" id="signUpButton">Sign up</a>
       </div>
 
     <footer class="pt-5 my-5 text-body-secondary border-top">
       Created by the Bootstrap team &middot; &copy; 2024
     </footer>
   </div>
-  <script src="JS/Name.js"></script>
+  <script src="JS/Check.js"></script>
   </body>
 </html>
