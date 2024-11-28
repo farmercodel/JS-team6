@@ -18,5 +18,14 @@ function saveNumber() {
     const fullNumber = `${ phone1 } - ${ phone2 } - ${ phone3 }`;
     document.getElementById('savedPhoneNumber').innerText = fullNumber;
     localStorage.setItem('savedPhoneNumber', fullNumber);
-    signUpButton.disabled = false;
+}
+
+function resetAll() {
+    document.getElementById('display1').textContent = padNumber(0, 3);
+    document.getElementById('display2').textContent = padNumber(0, 4);
+    document.getElementById('display3').textContent = padNumber(0, 4);
+    
+    const fullNumber = "";
+    document.getElementById('savedPhoneNumber').textContent = fullNumber;
+    localStorage.setItem('savedPhoneNumber', fullNumber);
 }
