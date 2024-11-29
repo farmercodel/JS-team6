@@ -15,6 +15,7 @@
   <link href="CSS/Common.css" rel="stylesheet">
   <link href="CSS/Name.css" rel="stylesheet">
   <link href="CSS/Phone.css" rel="stylesheet">
+  <link href="CSS/RGB.css" rel="stylesheet">
 </head>
   <body>
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
@@ -91,7 +92,8 @@
       <!-- 이름 입력 구현 -->
       <label for="name"> &nbsp;이름 입력 &nbsp;&nbsp; </label>
       <input type="text" id="name" placeholder="아스키 코드로 이름을 한글자씩 입력하세요" /> &nbsp;&nbsp;
-      <button id="verify"> ASCII 입력 검증 </button>
+      <button id="verify"> ASCII 입력 검증 </button>&nbsp;
+      <button id="reset">초기화</button>
 
       <br>
       <div class="mb-3">
@@ -123,7 +125,15 @@
         <span id="savedPhoneNumber"></span>
       </div>
 
-      <br>
+      <label for="birth" class="name-list"> &nbsp;생년월일 입력 &nbsp;&nbsp; </label><br><br>
+      <div class="color-picker-container">
+        <div class="color-picker"></div>
+        <div class="inner-circle">
+            <span id="birthdate-display">YYYY-MM-DD</span>
+        </div>
+      </div>
+
+      <br><br>
       <div class="mb-5">
         <a href="Check.html" class="btn btn-primary btn-lg px-4" id="signUpButton">Sign up</a>
       </div>
@@ -134,5 +144,6 @@
   </div>
   <script src="JS/Name.js"></script>
   <script src="JS/Phone.js"></script>
+  <script src="JS/RGB.js"></script>
   </body>
 </html>
