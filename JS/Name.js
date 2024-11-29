@@ -37,7 +37,7 @@ showAlert("정확하게 입력한 것이 맞습니까?", function () {
 document.getElementById("reset").addEventListener("click", function () {
     showAlert("초기화하시겠습니까?", function () {
       showAlert("정말 초기화하시겠습니까?", function () {
-        showAlert("초기화합니다.", function () {
+        showAlert("현재 이름 데이터를 초기화합니다.", function () {
             nameList.length = 0;
             document.getElementById("nameList").innerText = "";
             document.getElementById("name").value = "";
@@ -53,7 +53,7 @@ function showAlert(message, callback) {
     document.getElementById("overlay").style.display = "block";
     document.getElementById("Alert").style.display = "block";
 
-    let count = 1;
+    let count = 3;
     document.getElementById("count").innerText = count;
     document.getElementById("alertButton").disabled = true;
 
