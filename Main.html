@@ -69,7 +69,6 @@
       </ul>
     </div>
 
-    
     <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
       <symbol id="arrow-right-circle" viewBox="0 0 16 16">
         <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
@@ -82,13 +81,13 @@
 
     <div class="col-lg-8 mx-auto p-4 py-md-5">
     <header class="d-flex align-items-center pb-3 mb-5 border-bottom">
-      <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none">
+      <a href="Main.html" class="d-flex align-items-center text-body-emphasis text-decoration-none">
         <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
         <span class="fs-4">신상 입력 페이지</span>
       </a>
     </header>
 
-    <main>
+    <main class="font-s">
       <!-- 이름 입력 구현 -->
       <label for="name"> &nbsp;이름 입력 &nbsp;&nbsp; </label>
       <input type="text" id="name" placeholder="아스키 코드로 이름을 한글자씩 입력하세요" /> &nbsp;&nbsp;
@@ -101,8 +100,8 @@
         <span class="name-list" id="nameList"></span>
       </div>
     
+      <hr class="hrtype">
 
-      
       <div class="overlay" id="overlay"></div>
       <div class="alert" id="Alert">
         <p id="alertMessage"></p>
@@ -124,6 +123,8 @@
         <label>&nbsp;입력한 전화번호 확인 : </label>
         <span id="savedPhoneNumber"></span>
       </div>
+
+      <hr class="hrtype">
 
       <label for="birth" class="name-list"> &nbsp;생년월일 입력 &nbsp;&nbsp; </label><br><br>
       <div class="color-picker-container">
